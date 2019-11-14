@@ -1,0 +1,22 @@
+.text-field {
+    -fx-background-color: -fx-text-box-border, -fx-background ;
+    -fx-background-insets: 0, 0 0 1 0 ;
+    -fx-background-radius: 0 ;
+    -fx-font-family:'Brandon Grotesque','brandon-grotesque-n7','brandon-grotesque',Helvetica,sans-serif;
+    -fx-font-weight:bold;
+}
+.text-field:focused {
+    -fx-background-color: -fx-focus-color, -fx-background ;
+}
+.button{
+-fx-background-color:#c9d6df;
+}
+.button:focused{
+-fx-background-color:black;
+}
+#logI{
+-fx-font-family: Clarkson, "Helvetica Neue", Helvetica, Arial, sans-serif;
+-fx-font-size:22px;
+-fx-line-height:28px;
+-fx-text-fill:black;
+}

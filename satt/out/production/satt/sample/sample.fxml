@@ -112,7 +112,7 @@
                             <FXCollections fx:factory="observableArrayList">
                                  <String fx:value="Satellite" />
                                  <String fx:value="Launch Vehicle" />
-                                 <String fx:value="AGENCY" />
+                                 <String fx:value="Agency" />
                             </FXCollections>
                         </items>
                   <cursor>
