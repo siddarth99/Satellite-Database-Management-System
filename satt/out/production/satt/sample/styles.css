@@ -1,0 +1,56 @@
+
+#topmostBar{
+-fx-background-color:#f2f2f2;
+-fx-position:relative;
+}
+.root{
+-fx-background-color:white;
+}
+#top{
+-fx-background-color: linear-gradient(to right,#c25cab,#42d2f7);
+}
+#register{
+-fx-background-size:100% 100%;
+-fx-background-color:transparent;
+-fx-text-fill:black;
+-fx-font-family:Calibre;
+-fx-font-size:150%;
+}
+#b1{
+-fx-background-color:transparent;
+-fx-text-fill:#b6b6b6;
+}
+#g1{
+-fx-background-color:white;
+-fx-text-fill:rgb(40,40,40);
+-fx-font-size:18px;
+-fx-font-family: Calibre,Helvetica,Arial,sans-serif;
+-fx-font-weight:300;
+}
+#comb{
+
+-fx-background-color:#beebe9;
+}
+#cent{
+-fx-background-color: linear-gradient(to right,#c25cab,#42d2f7);
+}
+#s1{
+-fx-background-color:#beebe9;
+  -fx-font-size: 10;
+}
+#sb{
+-fx-background-color:#beebe9;
+}
+#Gri{
+-fx-background-color:#222831;
+}
+#labH{
+-fx-font-family:'Brandon Grotesque','brandon-grotesque-n7','brandon-grotesque',Helvetica,sans-serif;
+-fx-font-weight:bold;
+-fx-margin-bottom:14px;
+-fx-font-size:14px;
+-fx-text-fill:white;
+}
+#labTot{
+-fx-text-fill:#c9d6df;
+}
