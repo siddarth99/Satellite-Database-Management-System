@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="815.0" stylesheets="@launches.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.LaunchControl">
+    <children>
+
+        <VBox layoutX="157.0" layoutY="22.0" prefHeight="34.0" prefWidth="41.0" spacing="4.0" />
+
+        <TableView fx:id="satelliteTable" editable="true" layoutX="25.0" layoutY="93.0" prefHeight="489.0" prefWidth="800.0" tableMenuButtonVisible="true">
+            <columns>
+                <TableColumn fx:id="name" prefWidth="97.0" text="Name" />
+                <TableColumn fx:id="purpose" prefWidth="114.0" text="Purpose" />
+                <TableColumn fx:id="launch_date" prefWidth="122.0" text="Launch_date" />
+                <TableColumn fx:id="destruct_date" prefWidth="119.0" text="Destruct_date" />
+                <TableColumn fx:id="orbit" prefWidth="98.0" text="Orbit" />
+                <TableColumn fx:id="launchv" prefWidth="123.0" text="Launch_vehicle" />
+                <TableColumn fx:id="agency" prefWidth="95.0" text="Agency" />
+            </columns>
+        </TableView>
+         <Button fx:id="Back" layoutX="25.0" layoutY="23.0" onAction="#Back" prefHeight="31.0" prefWidth="73.0"
+                 text="Back">
+
+            </Button>
+    </children>
+</AnchorPane>

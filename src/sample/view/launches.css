@@ -1,0 +1,17 @@
+.table-view{
+-fx-background-color:#08d9d6;
+-fx-text-fill:#eaeaea;
+
+}
+.table-view.filler{
+-fx-background-color:#30e3ca;
+-fx-text-fill:#eaeaea;
+}
+.root{
+-fx-background-color:#222831;
+}
+.table-cell{
+-fx-background-color:#08d9d6;
+-fx-text-fill:#393e46;
+-fx-font-weight:bold;
+}

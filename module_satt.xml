@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_satt" default="compile.module.satt">
+  <dirname property="module.satt.basedir" file="${ant.file.module_satt}"/>
+  
+  <property name="module.jdk.home.satt" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.satt" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.satt" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.satt" value="-encoding UTF-8 -source 11 -target 13 ${compiler.args}"/>
+  
+  <property name="satt.output.dir" value="${module.satt.basedir}/out/production/satt"/>
+  <property name="satt.testoutput.dir" value="${module.satt.basedir}/out/test/satt"/>
+  
+  <path id="satt.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="satt.module.production.classpath">
+    <path refid="${module.jdk.classpath.satt}"/>
+    <path refid="library.javafx-11.classpath"/>
+    <path refid="library.mssql-jdbc-7.4.1.jre12.classpath"/>
+    <path refid="library.jfoenix-9.0.8.classpath"/>
+  </path>
+  
+  <path id="satt.runtime.production.module.classpath">
+    <pathelement location="${satt.output.dir}"/>
+    <path refid="library.javafx-11.classpath"/>
+    <path refid="library.mssql-jdbc-7.4.1.jre12.classpath"/>
+    <path refid="library.jfoenix-9.0.8.classpath"/>
+  </path>
+  
+  <path id="satt.module.classpath">
+    <path refid="${module.jdk.classpath.satt}"/>
+    <pathelement location="${satt.output.dir}"/>
+    <path refid="library.javafx-11.classpath"/>
+    <path refid="library.mssql-jdbc-7.4.1.jre12.classpath"/>
+    <path refid="library.jfoenix-9.0.8.classpath"/>
+  </path>
+  
+  <path id="satt.runtime.module.classpath">
+    <pathelement location="${satt.testoutput.dir}"/>
+    <pathelement location="${satt.output.dir}"/>
+    <path refid="library.javafx-11.classpath"/>
+    <path refid="library.mssql-jdbc-7.4.1.jre12.classpath"/>
+    <path refid="library.jfoenix-9.0.8.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.satt">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.satt">
+    <patternset refid="excluded.from.module.satt"/>
+  </patternset>
+  
+  <path id="satt.module.sourcepath">
+    <dirset dir="${module.satt.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.satt" depends="compile.module.satt.production,compile.module.satt.tests" description="Compile module satt"/>
+  
+  <target name="compile.module.satt.production" depends="register.custom.compilers" description="Compile module satt; production classes">
+    <mkdir dir="${satt.output.dir}"/>
+    <javac2 destdir="${satt.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.satt}/javac">
+      <compilerarg line="${compiler.args.satt}"/>
+      <bootclasspath refid="satt.module.bootclasspath"/>
+      <classpath refid="satt.module.production.classpath"/>
+      <src refid="satt.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.satt"/>
+    </javac2>
+    
+    <copy todir="${satt.output.dir}">
+      <fileset dir="${module.satt.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.satt.tests" depends="register.custom.compilers,compile.module.satt.production" description="compile module satt; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.satt" description="cleanup module">
+    <delete dir="${satt.output.dir}"/>
+    <delete dir="${satt.testoutput.dir}"/>
+  </target>
+</project>
